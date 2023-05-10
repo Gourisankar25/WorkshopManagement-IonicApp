@@ -1,0 +1,49 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding" color="primary">
+ <div class="login-box">
+
+  <ion-card class="card" color="light">
+  <div class="popover">
+    <h4 style="font-size: 30px; text-align: center;color: #e5dda8;" >UPDATE</h4>
+    <p style="color: #e5dda8;">Edit form details</p>
+  </div>
+  <form (ngSubmit)="update()" [formGroup]='mechedit'>
+
+ &nbsp;   <ion-input placeholder="Full Name" class="primary-input" formControlName="mechanicname"> &nbsp; <ion-icon name="person-outline"></ion-icon></ion-input>
+ &nbsp; <ion-input placeholder="Location" class="primary-input" formControlName="location"> &nbsp;<ion-icon name="location-outline"></ion-icon></ion-input>
+ &nbsp;<ion-input type="email" placeholder="Email ID" class="primary-input" formControlName="mechanicemail"> &nbsp;<ion-icon name="mail-outline"></ion-icon></ion-input>
+ &nbsp; <ion-input type="number" placeholder="Contact" class="primary-input" formControlName="mechanicnumber"> &nbsp;<ion-icon name="call-outline"></ion-icon></ion-input>
+ <ion-card>
+  <ion-card-subtitle>
+    <ion-item>
+      <ion-select placeholder="Change Status"  formControlName="status">
+        <ion-select-option value="Active">Active</ion-select-option>
+        <ion-select-option value="Inactive">Inactive</ion-select-option>
+        <ion-select-option value="Leave">Leave</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card-subtitle>
+ </ion-card>
+
+<div>
+
+</div>
+<br>
+<br>
+<p style="color: #e5dda8; width: 90%;
+margin: auto;">By editing you're updating details of mechanic of your shop</p>
+  <div class="ion-margin-top">
+    <ion-button type="submit" color="success">UPDATE</ion-button>
+  </div>
+ 
+</form>
+<br>
+  <!-- <div class="ion-margin-top ion-text-center">
+    <a (click)="dismiss()">Close</a>
+  </div> -->
+</ion-card>
+ </div>
+</ion-content>

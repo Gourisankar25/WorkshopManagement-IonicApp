@@ -1,0 +1,38 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding" color="primary">
+ <div class="login-box">
+
+  <ion-card class="card" color="light">
+  <div class="popover">
+    <h4 style="font-size: 30px; text-align: center;color: #e5dda8;" >EDIT SERVICE</h4>
+    <!-- <p style="color: #e5dda8;">Complete service details</p> -->
+  </div>
+  <form (ngSubmit)="update()" [formGroup]='serviceedit'>
+
+ &nbsp;   <ion-input placeholder="Service Name" class="primary-input" formControlName="servicename"> &nbsp; <ion-icon name="construct-outline"></ion-icon></ion-input>
+ &nbsp; <ion-input placeholder="Description" class="primary-input" formControlName="servicedescription"> &nbsp;<ion-icon name="reader-outline"></ion-icon></ion-input>
+ &nbsp;<ion-input placeholder="Service Cost " class="primary-input" formControlName="servicecost"> &nbsp;₹</ion-input>
+ <!-- &nbsp; <ion-input placeholder="Contact" class="primary-input" formControlName="mechanicnumber"> &nbsp;<ion-icon name="call-outline"></ion-icon></ion-input> -->
+
+<div>
+
+</div>
+<br>
+<br>
+<p style="color: #e5dda8; width: 90%;
+margin: auto;">By updating service details, it's automatically updated in every screens</p>
+  <div class="ion-margin-top">
+    <ion-button type="submit" color="success">UPDATE</ion-button>
+  </div>
+ 
+</form>
+<br>
+  <!-- <div class="ion-margin-top ion-text-center">
+    <a (click)="dismiss()">Close</a>
+  </div> -->
+</ion-card>
+ </div>
+</ion-content>

@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-label style="font-weight: 800;font-size: 3em;">
+        View More
+        <p style="font-weight: 400;color: #433465 ;"></p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="primary">
+
+  <ion-card *ngFor="let c of workshopmore;" class="card">
+    <ion-card-header>
+      <img [src]="c.image" height="100px">
+      <ion-card-subtitle>
+        <span id="temp">
+          {{c.workshopname}}<br>
+       
+        </span><br>
+        <span id="temps">
+       &nbsp;<ion-icon name="person-outline"></ion-icon> {{c.ownername}}<br><br>
+          &nbsp;&nbsp;<ion-icon name="location-outline"></ion-icon>{{c.locationname}}, {{c.districtname}}<br><br>
+          <!-- &nbsp;<ion-icon name="location-outline"></ion-icon>{{c.districtname}}<br><br> -->
+
+          &nbsp;   <ion-icon name="mail-outline"></ion-icon> {{c.email}}<br><br>
+          &nbsp; <ion-icon name="call-outline"></ion-icon> {{c.number}}<br><br>
+          &nbsp; <ion-icon name="car-outline"></ion-icon> {{c.type}}<br><br>
+
+           
+           <br>
+        </span>
+       
+
+<ion-card  *ngFor="let c of workshopmore;" >
+  REQUEST DATE -&nbsp;<ion-label> {{c.formatteddate}}</ion-label>
+  <!-- SHOP TYPE &nbsp;<ion-label> {{c.type}}</ion-label> -->
+
+</ion-card>
+
+      </ion-card-subtitle>
+
+    </ion-card-header>
+  </ion-card>
+
+    <!-- <ion-card-content> -->
+
+     
+    <!-- <ion-row>
+    
+
+      <ion-item button (click)="update(item)">
+        <ion-icon name="create-outline"></ion-icon>
+        <p>Update</p>
+      </ion-item>
+
+      <ion-item button (click)="delete(item.key)">
+        <ion-icon name="trash-outline"></ion-icon>
+        <p>Cancel</p>
+      </ion-item>
+    </ion-row> -->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngFor="let c of workshopmore;">
+    <ion-fab-button (click)="accept(c.collection_shopId)" color="success">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="reject(c.collection_shopId)" color="danger">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

@@ -1,0 +1,29 @@
+ion-content{
+    --background : #F0F4FD;
+  
+    p{
+     font-weight: 300;
+    }
+  }
+  .card{
+    // height: 350px
+    border-radius: 20px;
+    --ion-background-color: #145f6a;
+  }
+  #temp{
+    font-weight: 300;
+    font-size: 1.5em;
+    color: rgb(16, 137, 217);
+    margin: 5px;
+    
+   
+  }
+  #temps{
+    font-weight: 300;
+    font-size: 1em;
+    color: rgb(175, 220, 217);
+    margin: 5px;
+  }
+img{
+    height: fit-content;
+}

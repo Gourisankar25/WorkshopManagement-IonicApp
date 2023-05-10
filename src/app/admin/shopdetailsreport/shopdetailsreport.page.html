@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      <ion-title>SHOP DETAILS</ion-title>
+    
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+
+
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-list class="popover" lines="none">
+    <ion-row>
+      
+      <ion-col size="6">
+        <ion-item color="tertiary">
+          <ion-label class="ion-text-wrap">
+            <h1>
+          <b>{{workshops}}</b>
+              <!-- <ion-text class="ion-margin-start" color="primary">-12%</ion-text> -->
+            </h1>
+            <p> Shops registered</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+  
+      <ion-col size="6">
+        <ion-item color="tertiary">
+          <ion-label class="ion-text-wrap ion-text-right">
+            <h1>
+              <!-- <ion-text class="ion-margin-end" color="primary">+49%</ion-text> -->
+              <b>{{requestlength}}</b>
+            </h1>
+            <p> Shops active</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12"></ion-col>
+    </ion-row>
+  </ion-list>
+  <ion-row class="ion-margin-horizontal">
+    <ion-col  size="12">
+      <ion-card class="ion-text-center" style="background-color: rgb(46, 4, 69);" *ngFor="let c of workshop;">
+        <ion-card-header>
+          <div align="center">
+            <ion-thumbnail>
+              <img [src]="c.image" height="300px"/>
+
+            </ion-thumbnail>
+          </div>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+             <h3><ion-icon name="storefront-outline"></ion-icon></h3>
+              <p slot="end">{{c.workshopname}}</p>
+            </ion-item>
+            <ion-item>
+              <h3><ion-icon name="location-outline"></ion-icon></h3>
+              <p slot="end">{{c.locationname}}</p>
+            </ion-item>
+            <ion-item>
+              <h3><ion-icon name="location-outline"></ion-icon></h3>
+              <p slot="end">    {{c.districtname}}</p>
+            </ion-item>
+            <ion-item>
+              <h3><ion-icon name="call-outline"></ion-icon></h3>
+              <p slot="end">{{c.number}}</p>
+            </ion-item>
+              <p slot="end" style="color: bisque;">{{c.shopstatus}}</p>
+        
+          </ion-list>
+         
+     
+        
+     
+        
+     
+         
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

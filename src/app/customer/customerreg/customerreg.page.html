@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title></ion-title>
+    <ion-title>Customer Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="register()" [formGroup]='signup'>
+  <ion-item fill="solid">
+    <ion-label position="floating"> Name</ion-label>
+    <ion-input type="text" formControlName="customername"></ion-input>
+  </ion-item>
+
+  <!-- <ion-item fill="solid">
+    <ion-label position="floating">Location</ion-label>
+    <ion-input type="text" formControlName="location"></ion-input>
+  </ion-item> -->
+
+  <!-- <ion-list>
+    <ion-item>
+      <ion-select placeholder="Select district"  >
+        <ion-select-option value="idukki">idukki</ion-select-option>
+        <ion-select-option value="ernakulam">ernakulam</ion-select-option>
+        <ion-select-option value="wayanadu">wayanadu</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list> -->
+
+  <!-- <ion-item fill="solid">
+    <ion-label position="floating"></ion-label>
+    <ion-input type="text" formControlName="ownername"></ion-input>
+  </ion-item> -->
+
+  <!-- <ion-item fill="solid">
+    <ion-select placeholder="Gender" formControlName="gender">
+    <ion-select-option value="Male">Male</ion-select-option>
+    <ion-select-option value="Female">Female</ion-select-option>
+  </ion-select>
+  </ion-item> -->
+
+  <ion-item fill="solid">
+    <ion-label position="floating" >Email</ion-label>
+    <ion-input type="email" formControlName="customeremail"></ion-input>
+  </ion-item>
+
+  <!-- <ion-item fill="solid">
+    <ion-label position="floating">Date Of Birth</ion-label><br>
+    <ion-input type="date" formControlName="date"></ion-input>
+  </ion-item> -->
+
+  <ion-item fill="solid">
+    <ion-label position="floating" >Contact</ion-label>
+    <ion-input type="number" formControlName="customernumber"></ion-input>
+  </ion-item>
+
+  <ion-item fill="solid">
+    <ion-label position="floating"> Location</ion-label>
+    <ion-input type="text" formControlName="location"></ion-input>
+  </ion-item>
+
+  <ion-item fill="solid">
+    <ion-label position="floating" >Username</ion-label>
+    <ion-input type="text" formControlName="username"></ion-input>
+  </ion-item>
+
+  <ion-item fill="solid">
+    <ion-label position="floating" >Password</ion-label>
+    <ion-input type="text" formControlName="password"></ion-input>
+  </ion-item>
+
+  <!-- <ion-item fill="solid">
+    <ion-label position="floating">Username</ion-label>
+    <ion-input type="text" formControlName="username"></ion-input>
+  </ion-item> -->
+
+  <!-- <ion-item fill="solid">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item> -->
+
+  <ion-button type="submit" color="secondary" shape="round">Register</ion-button>
+</form>
+
+</ion-content>

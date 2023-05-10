@@ -1,0 +1,19 @@
+ion-content {
+    --ion-background-color:linear-gradient(#4ca1af  , #c4e0e5);
+
+
+    ion-card{
+
+        --background: #fff no-repeat center center / cover;
+        width: 48vh;
+        height: 12vh;
+        font-weight: 450;
+        font-size: 0.8rem;
+        color: gray;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        // position: relative;
+        
+    }
+}       

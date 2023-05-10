@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content  [fullscreen]="true" color="primary">
+  <div>
+    <div style="text-align: center; margin: 15px;">
+     <ion-label style="font-weight: 500;font-size: 1.5em;color: black;">CUSTOMER REQUESTS</ion-label>
+    </div> 
+   <ion-card class="card"  *ngFor="let c of request;">
+ 
+     <ion-item  lines="none">
+       <p slot="start" style="font-weight: 500;color: rgb(143, 172, 222);">{{c.customername}}</p>
+       <ion-label  id="date" slot="end">{{c.requesteddate}}</ion-label>
+     </ion-item>
+ 
+     <ion-item lines="none">
+      <span id="temp">
+        {{c.servicename}}
+      </span>
+     </ion-item>
+     
+     <ion-item lines="none">
+      <ion-icon name="checkmark-done-outline"></ion-icon>&nbsp;
+       <span id="location">{{c.description}}</span>
+     </ion-item>
+ 
+     <br>
+     <ion-item class="bt"> 
+       <ion-button class="btn btn-success" fill="outline"  [routerLink]= "['/shopowner/cusrequestviewmore', c.collection_servicerequestId]" >View More</ion-button>
+       </ion-item>
+
+   </ion-card>
+  </div>
+ </ion-content>

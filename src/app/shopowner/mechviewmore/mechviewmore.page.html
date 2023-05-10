@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      <ion-title>Mechanic Profile </ion-title>
+
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content *ngFor="let p of mechmore;" color="primary">
+<ion-card class="card">
+<br>
+  <img src="assets/icon/mechanic logo.jpeg" class="center">
+  <ion-list>
+    <ion-item>
+     <h3><ion-icon name="person-circle-outline"></ion-icon></h3>
+      <p> &nbsp;&nbsp;{{p.mechanicname}}</p>
+    </ion-item>
+    <ion-item>
+      <h3><ion-icon name="mail-outline"></ion-icon></h3>
+      <p >&nbsp;&nbsp;{{p.mechanicemail}}</p>
+    </ion-item>
+    <ion-item>
+      <h3> <ion-icon name="location-outline"></ion-icon></h3>
+      <p >&nbsp;&nbsp;{{p.location}}</p>
+    </ion-item>
+    <ion-item>
+      <h3><ion-icon name="call-outline"></ion-icon></h3>
+      <p >&nbsp;&nbsp;{{p.mechanicnumber}}</p>
+    </ion-item>
+    <ion-item>
+      <h3><ion-icon name="eye-outline"></ion-icon></h3>
+      <p >&nbsp;&nbsp;{{p.status}}</p>
+    </ion-item>
+    
+  </ion-list>
+
+
+<ion-item></ion-item>
+  <!-- <ion-item>
+  
+    <ion-button class="btn btn-success" (click)="edit()">Edit</ion-button>
+  </ion-item>
+
+  <ion-item>
+  
+    <ion-button class="btn btn-success" color="danger"
+            (click)="delete()" >Delete</ion-button>
+  </ion-item> -->
+
+  
+  </ion-card>
+  <br>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="edit()" color="success">
+      
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="delete()" color="danger">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>

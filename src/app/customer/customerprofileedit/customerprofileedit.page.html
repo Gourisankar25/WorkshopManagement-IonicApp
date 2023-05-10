@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      <ion-title></ion-title>
+
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content color="success">
+  <img src="assets/icon/user2.png" class="center">
+<ion-card>
+    <form (ngSubmit)="update()" [formGroup]='profileedit'>
+      <ion-list>
+
+    <ion-item>
+      
+     <h3> <ion-icon name="person-circle-outline"></ion-icon></h3>&nbsp;
+     <ion-input type="text" formControlName="customername" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <h3><ion-icon name="mail-outline"></ion-icon></h3>&nbsp;
+      <ion-input type="email" formControlName="customeremail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <h3>  <ion-icon name="location-outline"></ion-icon></h3>&nbsp;
+      <ion-input type="text" formControlName="location" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <h3><ion-icon name="call-outline"></ion-icon></h3>&nbsp;
+      <ion-input type="number" formControlName="customernumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <h3><ion-label  slot="start"  position="floating"> Username</ion-label></h3>
+      <ion-input type="text" formControlName="username" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <h3><ion-label  slot="start"  position="floating"> Password</ion-label></h3>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <h3><ion-label  slot="start">Password</ion-label></h3>
+      <p slot="end">{{p.password}}</p>
+    </ion-item> -->
+
+  <ion-item>
+  
+
+    <ion-button type="submit" color="success" shape="round" id="button" fill="outline">UPDATE</ion-button>
+  </ion-item>
+</ion-list>
+
+</form>
+</ion-card>
+    <br><br>
+</ion-content>

@@ -1,0 +1,179 @@
+ion-header {
+    background: var(--ion-color-light);
+    ion-grid {
+      background: var(--ion-color-tertiary);
+      margin-top: -5px;
+      border-radius: 0 0 5px 5px;
+      padding-bottom: 120px;
+    }
+    .popover {
+      background: var(--ion-color-white);
+      border-radius: 10px;
+      width: 90%;
+      margin: auto;
+      margin-top: -120px;
+      ion-item {
+        ion-label {
+          margin: 0;
+           h1 {
+             font-size: 1.8rem;
+           }
+           p {
+             margin-top: 3px;
+             font-size: 0.8rem;
+           }
+           ion-text {
+            font-size: 0.7rem;
+           }
+        }
+      }
+    }
+    div {
+      background: var(--ion-color-light);
+      ion-segment {
+        --background: var(--ion-color-white);
+        border-radius: 20px;
+        --margin-top: 5px;
+        --margin-bottom: 5px;
+        ion-segment-button {
+          --background-checked: var(--ion-color-primary);
+          --indicator-color: var(--ion-color-primary);
+          --border-radius: 20px;
+          --color: var(--ion-color-primary);
+          --color-checked: var(--ion-color-white);
+        }
+      }
+    }
+  }
+  
+  ion-content {
+     --background: var(--ion-color-tertiary);
+    // --background:linear-gradient(#4568dc ,#b06ab3);
+
+    ion-list {
+      background: var(--ion-color-light);
+      .heading {
+        font-family: lato;
+      }
+      .popItem {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        padding: 0;
+        ion-thumbnail {
+          min-width: 5rem;
+          min-height: 6rem;
+          border-radius: 10px;
+          background: var(--ion-color-secondary);
+          div {
+            background-color: var(--ion-color-primary);
+            border-radius: 10px 10px 0 0;
+            padding-bottom: 2px;
+            ion-text {
+              font-size: 0.7rem;
+              font-weight: bold;
+            }
+          }
+          p {
+            ion-text {
+              font-size: 2.5rem !important;
+            }
+          }
+        }
+        ion-label {
+          ion-note {
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+          }
+          p {
+            margin-top: 5px;
+            ion-text {
+              span {
+                color: var(--ion-color-dark);
+                padding: 0 5px;
+              }
+            }
+          }
+        }
+        ion-fab {
+          margin-right: -15px !important;
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+
+
+
+  //card css ****************************
+
+ 
+        
+   
+               
+       
+  
+  
+  ion-content {
+  
+    --ion-background:linear-gradient(#4568dc ,#b06ab3);
+  // border-radius: 10px 10px 0 0;
+
+       
+    
+  
+    // div.topic {
+    //     font-size: 1.3rem;
+    //     margin: 0 10px;
+    //     margin-left: 25vw;
+        
+    // }
+  
+    .sec {
+        margin: 1vh 5px 0 5px;
+        .secs {
+        // margin: 2vh 10px 0 5px;
+
+            ion-col {
+                padding: 0 !important;
+                ion-card {
+                    border: 0.001vh solid var(--ion-color-medium);
+                    height: 100px;
+                    width: 100%;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    ion-label {
+                        font-size: 0.7rem;
+                        font-weight: 600;
+                        margin-top: 5px;
+                    }
+                    ion-thumbnail {
+                        height: 7vh;
+                    }
+                }
+            }
+        }
+    }
+  
+  
+  
+}
+
+
+  div{
+    // --ion-background-color:linear-gradient(#4568dc ,#b06ab3);
+    ion-img {
+        width: auto;
+        height: 38vh;
+        border-radius: 5px;
+        background-size:cover;
+        border: solid 4px blueviolet;
+        object-fit: fill;
+    }
+  }
+  

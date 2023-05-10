@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-menu-button></ion-menu-button> 
+
+      <ion-label style="font-weight: 650;font-size: 3em;">
+        Accepted List
+        <!-- <p style="font-weight: 400;color: #433465 ;">{{today | date:'fullDate'}}</p> -->
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  color="success">
+
+  <ion-card *ngFor="let c of request;" class="ion-margin">
+    <ion-card-header>
+      
+      <ion-card-subtitle><ion-icon name="build-outline"></ion-icon>
+        {{c.servicename}}<br><br>
+        <ion-label><ion-icon name="calendar-outline"></ion-icon>
+         </ion-label> {{c.requesteddate}}
+
+      </ion-card-subtitle>
+
+    </ion-card-header>
+
+    <ion-card-content>Description :-
+      <ion-label>{{c.description}}</ion-label>
+    </ion-card-content>
+
+    <ion-row>
+
+      <ion-item> 
+        <ion-icon name="create-outline"></ion-icon>
+
+        <ion-button fill="none" class="btn btn-success"  [routerLink]= "['/customer/viewmechanicdetails', c.mechanicname]">View Alotted Mechanic Details</ion-button>
+        </ion-item>
+
+    </ion-row>
+
+  </ion-card>
+</ion-content>

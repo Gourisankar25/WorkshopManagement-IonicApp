@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-list lines="none">
+    <ion-item color="primary">
+      <ion-label class="ion-text-center" color="white"></ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="popover">
+    <ion-item lines="none">
+      <ion-label>
+        <ion-text color="dark">WORKSHOP</ion-text>
+        <p><br><ion-text color="primary">REQUESTS</ion-text></p>
+      </ion-label>
+      <!-- <ion-icon slot="end" name="add-circle" color="primary"></ion-icon> -->
+    </ion-item>
+  </div>
+  
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-list lines="none" class="ion-margin-vertical">
+    <ion-list-header mode="md">Newest come first</ion-list-header>
+    <ion-item *ngFor="let c of workshop;">
+      <ion-label>
+        <ion-text>{{c.workshopname}}</ion-text>
+        <p class="tmargin">
+          <ion-text>
+            {{c.locationname}}
+          </ion-text>
+        </p>
+      </ion-label>
+      <ion-text 
+        slot="end" 
+        [color]= "'danger'" [routerLink]= "['/admin/workshopviewmore', c.collection_shopId]">
+        <span>VIEW MORE</span>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

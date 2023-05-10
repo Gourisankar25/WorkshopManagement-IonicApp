@@ -1,0 +1,211 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <!-- <ion-menu-button></ion-menu-button>  -->
+      </ion-buttons>
+    <ion-title></ion-title>
+    <!-- <ion-title color="medium">Customer Registration</ion-title> -->
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="bg-color">
+
+    <ion-card class="ion-no-margin">
+
+        <ion-card-header>
+            <ion-card-title>
+              Sign Up
+            </ion-card-title>
+            <ion-card-subtitle>
+              Create Your Workshop by filling up the form
+              </ion-card-subtitle>
+        </ion-card-header>
+             <form [formGroup]="signup" (ngSubmit)="register()">
+       <ion-card-content>
+           <ion-item>
+            <ion-input type="text" formControlName="workshopname" placeholder="Workshop Name" [ngClass]="{ 'is-invalid':  submitted && f['workshopname'].errors }"> 
+              <ion-icon name="storefront-outline"></ion-icon>
+               </ion-input>
+               <div *ngIf="submitted && f['workshopname'].errors" class="invalid-feedback">
+                <div *ngIf="f['workshopname'].errors['required']">
+                  *Shop Name Required
+                </div>
+
+               </div>
+           </ion-item>
+
+           <ion-list>
+            <ion-item >
+              <ion-select placeholder="Select district"  formControlName="districtname" (ionChange)="view()">
+        <ion-select-option value="">Select District</ion-select-option>
+                <ion-select-option *ngFor="let c of district;" value="{{c.districtname}}">{{c.districtname}}</ion-select-option>
+              
+              </ion-select>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item >
+              <ion-select placeholder="Select location"  formControlName="locationname">
+        <ion-select-option  value="">Select Location</ion-select-option>
+        
+                <ion-select-option *ngFor="let c of location;" value="{{c.locationname}}">{{c.locationname}}</ion-select-option>
+              </ion-select>
+        
+            </ion-item>
+          </ion-list>
+
+
+          <ion-list>
+
+            <ion-item>
+            <ion-label position="stacked">Choose Shop service type</ion-label>
+          
+              <ion-select placeholder="SELECT SHOP TYPE" formControlName="type">
+                <ion-select-option value="2 WHEEL">2 WHEEL</ion-select-option>
+                <ion-select-option value="4 WHEEL">4 WHEEL</ion-select-option>
+                <ion-select-option value="2&4 WHEEL">2 & 4 WHEEL</ion-select-option>
+                <ion-select-option value="HEAVY">HEAVY</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+              <!-- <div>
+                <ng-container *ngFor="let validation of validationMessages.names">
+
+                  <div class="error_message" *ngIf="ValidationFormUSer.get('names').hasError(validation.type) && (ValidationFormUSer.get('names').dirty || ValidationFormUSer.get('names').touched)">
+                      {{validation.message}}
+                  </div>
+
+                 </ng-container>
+
+              </div> -->
+
+              <ion-item>
+                <ion-input type="text" formControlName="ownername" placeholder="Owner Name" [ngClass]="{ 'is-invalid':  submitted && f['ownername'].errors }"> 
+                  <ion-icon name="happy-outline"></ion-icon>
+                   </ion-input>
+                   <div *ngIf="submitted && f['ownername'].errors" class="invalid-feedback">
+                    <div *ngIf="f['ownername'].errors['required']">
+                  *Owner Name Required
+                    </div>
+    
+                   </div>
+               </ion-item>
+
+               <ion-item>
+                <ion-input type="file" id="name" (change)="handlefile($event)"></ion-input>
+              </ion-item>
+
+           <ion-item>
+            <ion-input type="number" formControlName="contactnumber"  placeholder="Phone No." [ngClass]="{ 'is-invalid':  submitted && f['contactnumber'].errors }" >
+                 <ion-icon name="call-outline" ></ion-icon>
+               </ion-input>
+               <div *ngIf="submitted && f['contactnumber'].errors" class="invalid-feedback">
+                <div *ngIf="f['contactnumber'].errors['required']">
+                  *Phone Number Required
+                </div>
+                <div *ngIf="f['contactnumber'].errors['pattern']">
+                  *Enter Valid Number 
+               </div>
+
+               </div>
+           </ion-item>
+           <!-- <div>
+             <ng-container *ngFor="let validation of validationMessages.phone">
+
+               <div class="error_message" *ngIf="ValidationFormUSer.get('phone').hasError(validation.type) && (ValidationFormUSer.get('phone').dirty || ValidationFormUSer.get('phone').touched)">
+                   {{validation.message}}
+               </div>
+
+              </ng-container>
+
+           </div> -->
+           <ion-item>
+            <ion-input type="email" formControlName="email" [ngClass]="{ 'is-invalid':  submitted && f['email'].errors }" placeholder="Email">
+                 <ion-icon name="mail-outline" ></ion-icon>
+               </ion-input>
+               <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">
+                  *Email Required
+                  </div>
+                <div *ngIf="f['email'].errors['email']">
+                  *Enter Valid Email
+                </div>
+               
+
+               </div>
+           </ion-item>
+           <!-- <ng-container *ngFor="let validation of validationMessages.email">
+
+             <div class="error_message" *ngIf="ValidationFormUSer.get('email').hasError(validation.type) && (ValidationFormUSer.get('email').dirty || ValidationFormUSer.get('email').touched)">
+                 {{validation.message}}
+             </div>
+
+            </ng-container> -->
+          
+
+
+           <!-- <ion-item>
+            <ion-input type="text" formControlName="location" placeholder="Location">
+              <ion-icon name="location-outline"></ion-icon>
+            </ion-input>
+        </ion-item> -->
+
+        <ion-item>
+          <ion-input type="text" formControlName="username" placeholder="username" [ngClass]="{ 'is-invalid':  submitted && f['username'].errors }">
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-input>
+          <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+            <div *ngIf="f['username'].errors['required']">
+              *Username Required
+            </div>
+
+           </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="password" type="password" placeholder="************" formControlName="password" [ngClass]="{ 'is-invalid':  submitted && f['password'].errors }">
+          <ion-icon name="lock-closed" ></ion-icon>
+        </ion-input>
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">
+            *Password Required
+          </div>
+
+         </div>
+    </ion-item>
+           <!-- <ng-container *ngFor="let validation of validationMessages.password">
+
+             <div class="error_message" *ngIf="ValidationFormUSer.get('password').hasError(validation.type) && (ValidationFormUSer.get('password').dirty || ValidationFormUSer.get('password').touched)">
+                 {{validation.message}}
+             </div>
+
+            </ng-container> -->
+
+           <div class="sign-btn-wrap">
+              <ion-button  shape="round" type="submit"  fill="solid" class="sign-btn">Sign Up</ion-button>
+             </div>
+
+             <!-- <div class="text-tag">
+             <span>Sign Up with</span>
+             </div> -->
+
+             <!-- <div class="social-btns">
+                 <ion-button fill="clear"  class="facebookbtn ion-no-padding">
+               <ion-img src="assets/images/facebook.png"></ion-img>
+                 </ion-button>
+                 <ion-button fill="clear"  class="googlebtn ion-no-padding">
+               <ion-img src="assets/images/google.png"></ion-img>
+                 </ion-button>
+                 <ion-button fill="clear"  class="applebtn ion-no-padding">
+               <ion-img src="assets/images/apple.png"></ion-img>
+                 </ion-button>
+
+               </div> -->
+
+       </ion-card-content>
+        </form>
+    </ion-card>
+
+</ion-content>

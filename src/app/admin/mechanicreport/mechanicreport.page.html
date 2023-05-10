@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      <ion-title>MECHANIC DETAILS</ion-title>
+    
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="contents">
+  <ion-list lines="none" >
+    <ion-card *ngFor="let c of mech;" class="ion-margin-top" class="card">
+      <ion-card-header class="cardhead">
+        <!-- <img [src]="c.image" height="100px"  [routerLink]= "['/customer/shopwiseserviceview', c.collection_shopId]"> -->
+        <p style="font-size: medium;font-weight: 2em;"> <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-mechanic-car-service-flaticons-lineal-color-flat-icons.png"/> <b> {{c.mechanicname}}</b></p>
+
+       </ion-card-header>
+        <br>
+        <ion-card-content>
+          <p style="font-size: medium;font-weight: 2em; color: rgb(9, 69, 44);"> <ion-icon name="call-outline"></ion-icon> {{c.mechanicnumber}}</p>
+        <p>
+          <ion-text>
+             <p style="font-size:medium"> <ion-icon name="eye-outline"></ion-icon> {{c.status}} </p>
+          </ion-text>
+        </p>
+      </ion-card-content>
+  </ion-card>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <form [formGroup]="viewworkshop">
+
+    <ion-list>
+      <ion-item color="danger">
+        <ion-select placeholder="All Workshops" formControlName="workshopname" (ionChange)="views()" style="color:black;">
+          <ion-select-option *ngFor="let c of workshop;" value="{{c.workshopname}}" >{{c.workshopname}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-footer>

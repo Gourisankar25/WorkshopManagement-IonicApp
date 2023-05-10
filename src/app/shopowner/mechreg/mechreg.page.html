@@ -1,0 +1,53 @@
+<ion-header>
+</ion-header>
+<ion-content class="ion-padding" color="primary">
+ <div class="login-box">
+  <ion-card class="card" color="light">
+  <div class="popover">
+    <h4 style="font-size: 30px; text-align: center;color: #e5dda8;" >ADD MECHANIC</h4>
+    <p style="color: #e5dda8;">Complete the form details</p>
+  </div>
+  <form (ngSubmit)="register()" [formGroup]='signup'>
+ <ion-item>   <ion-input placeholder="Full Name" class="primary-input" formControlName="mechanicname" [ngClass]="{ 'is-invalid':  submitted && f['mechanicname'].errors }"> &nbsp; <ion-icon name="person-outline"></ion-icon>&nbsp;  </ion-input>  <div *ngIf="submitted && f['mechanicname'].errors" class="invalid-feedback">
+  <div *ngIf="f['mechanicname'].errors['required']">
+    *Username Required
+  </div>
+
+ </div></ion-item>
+ <ion-item> <ion-input placeholder="Location" class="primary-input" formControlName="location" [ngClass]="{ 'is-invalid':  submitted && f['location'].errors }" > &nbsp;<ion-icon name="location-outline"></ion-icon> &nbsp;</ion-input><div *ngIf="submitted && f['location'].errors" class="invalid-feedback">
+  <div *ngIf="f['location'].errors['required']">
+    *Location Required
+  </div>
+
+ </div> </ion-item>
+ <ion-item><ion-input type="email" placeholder="Email ID" class="primary-input" formControlName="mechanicemail" [ngClass]="{ 'is-invalid':  submitted && f['mechanicemail'].errors }"> &nbsp;<ion-icon name="mail-outline"></ion-icon> &nbsp;</ion-input> <div *ngIf="submitted && f['mechanicemail'].errors" class="invalid-feedback">
+  <div *ngIf="f['mechanicemail'].errors['required']">
+    *Email Required
+    </div>
+  <div *ngIf="f['mechanicemail'].errors['email']">
+    *Enter Valid Email
+  </div>
+ </div></ion-item>
+ <ion-item> <ion-input type="number" placeholder="Contact" class="primary-input" formControlName="mechanicnumber" [ngClass]="{ 'is-invalid':  submitted && f['mechanicnumber'].errors }"> &nbsp;<ion-icon name="call-outline"></ion-icon>&nbsp;</ion-input><div *ngIf="submitted && f['mechanicnumber'].errors" class="invalid-feedback">
+  <div *ngIf="f['mechanicnumber'].errors['required']">
+    *Phone Number Required
+  </div>
+  <div *ngIf="f['mechanicnumber'].errors['pattern']">
+    *Enter Valid Number 
+ </div>
+
+ </div> </ion-item> 
+<div>
+</div>
+<br>
+<br>
+<p style="color: #e5dda8; width: 90%;
+margin: auto;">By registering you're adding a new mechanic to your shop</p>
+  <div class="ion-margin-top">
+    <ion-button type="submit" color="success">ADD MECHANIC</ion-button>
+  </div>
+</form>
+<br>
+</ion-card>
+ </div>
+</ion-content>

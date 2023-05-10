@@ -1,0 +1,173 @@
+.md {
+    .popover {
+        p {
+            padding-top: 1vh;
+        }
+    }
+  }
+  
+  ion-header {
+    background: var(--ion-color-light);
+    ion-toolbar {
+        --min-height: 0;
+        // --padding-start: 0;
+        // --padding-end: 0;
+        // --padding-top: 0;
+    }
+    ion-list {
+        background: var(--ion-color-success);
+        padding: 1vh 0 9vh 0;
+        ion-item {
+            ion-label {
+                font-weight: bold;
+                font-size: 1.6rem;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+  
+    .popover {
+        // margin: 0 8px;
+        width: 90%;
+        margin: auto;
+        ion-item {
+            --border-radius: 20px;
+            margin-top: -9vh;
+            ion-icon {
+                font-size: 4rem;
+            }
+            ion-label {
+                margin: 3vh 0;
+                ion-text {
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                }
+                p {
+                    ion-text {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+  }
+  
+  ion-content {
+    ion-list {
+        background: transparent;
+        ion-item {
+            width: 90%;
+            margin: auto;
+            border-radius: 10px;
+            margin-bottom: 2vh;
+            ion-label {
+                font-size: 1.1rem;
+                p {
+                    font-size: 0.85rem;
+                }
+                .tmargin {
+                    margin-top: 0.3vh;
+                }
+            }
+            ion-text[slot=end] {
+                font-size: 1.2rem;
+                span {
+                    font-weight: 450;
+                }
+            }
+        }
+    }
+  }
+  ion-button {
+    --box-shadow: none;
+    --border-radius: 10px;
+    --background: linear-gradient(
+      90deg,
+      rgb(63, 222, 164) 0%,
+      rgb(58, 160, 197) 100%
+    );
+    height: 42px;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-transform: initial;
+  }
+
+  //
+
+  .form-field {
+
+    position: relative;
+    margin-bottom: 1rem;
+    height: 120px;
+  
+    label {
+      position: absolute;
+      left: 1rem;
+      top: .5rem;
+      padding: 0 0.25rem;
+      color: #939fab;
+      font-size: 1rem;
+      transition: 0.3s;
+
+    }
+  
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      font-size: 17px;
+      font-weight: 600;
+      border: 2px solid #e7ebee;
+      border-radius: 10px;
+      outline: none;
+      padding: 1rem;
+      background: none;
+      z-index: 1;
+      color: #dde4f1;
+      background-color: #316dce;
+
+    }
+  
+    input:focus {
+      border-color: #fa578e;
+    }
+  
+    .label-focused {
+      top: -0.4rem;
+      left: 0.8rem;
+      font-size: 14px;
+      font-weight: 600;
+      background-color: #fff;
+      z-index: 10;
+    }
+  }
+
+  ion-card {
+    --background: #000;
+    --color: #9efff0;
+  }
+  
+  ion-card-title {
+    --color: #52ffe4;
+  }
+  
+  ion-card-subtitle {
+    --color: #d1fff8;
+  }
+  
+  /* iOS places the subtitle above the title */
+  ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+/////////////////////////////////////////////
+
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}
+

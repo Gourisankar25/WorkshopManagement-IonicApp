@@ -1,0 +1,39 @@
+ion-content{
+    --background : #F0F4FD;
+   
+  
+    p{
+     font-weight: 300;
+    }
+  }
+  .md {
+    
+        p {
+            padding-top: 1vh;
+            color: black;
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    font-weight: 14;
+    font-size: 1em;
+        }
+    
+}
+ion-segment{
+    --background:none;
+    ion-segment-button{
+        font-size: 1rem;
+        --border-width:0;
+        --padding-start: 8px;
+        --padding-bottom: 10px;
+        --padding-end: 8px;
+        --padding-top: 10px;
+        --background-checked: #ffffff;
+        --indicator-color:transparent!important;
+        --color: #d1d1d1;
+        --color-checked: #ffffff;
+        font-weight: bold;
+        border-radius: 4%;
+    }
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      <ion-title>Mechanic details </ion-title>
+      <!-- <ion-button fill="clear" [routerLink]= "['/customer/acceptedrequests']">
+        Go Back
+      </ion-button> -->
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content color="primary">
+  <ion-card *ngFor="let p of mechanic;" color="success">
+    <ion-card-header>
+      <img src="assets/icon/mechanic.png" class="center">
+      <!-- <ion-card-title> Mechanic Name :- {{p.mechanicname}}</ion-card-title><br> -->
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+    </ion-card-header>
+    <ion-list color="medium">
+      <ion-item  color="medium">
+       <h3> <ion-icon name="person-circle-outline"></ion-icon></h3>
+        <p slot="end">{{p.mechanicname}}</p>
+      </ion-item>
+      <ion-item>
+        <h3><ion-icon name="storefront-outline"></ion-icon></h3>
+        <p slot="end">{{p.workshopname}}</p>
+      </ion-item>
+      <ion-item>
+        <h3><ion-icon name="mail-outline"></ion-icon></h3>
+        <p slot="end">{{p.mechanicemail}}</p>
+      </ion-item>
+      <ion-item>
+        <h3><ion-icon name="call-outline"></ion-icon></h3>
+        <p slot="end">{{p.mechanicnumber}}</p>
+      </ion-item>
+      <ion-item>
+        <h3><ion-icon name="location-outline"></ion-icon></h3>
+        <p slot="end">{{p.location}}</p>
+      </ion-item>
+  
+    </ion-list>
+  </ion-card>
+
+</ion-content>

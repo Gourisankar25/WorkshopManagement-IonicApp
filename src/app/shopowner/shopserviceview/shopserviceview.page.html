@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-list lines="none">
+    <ion-item color="primary">
+      <ion-label class="ion-text-center" color="white"></ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="popover">
+    <ion-item lines="none">
+      <ion-label>
+        <ion-text color="dark">AVAILABLE</ion-text>
+        <p><br><ion-text color="primary">SERVICES</ion-text></p>
+      </ion-label>
+      <ion-icon slot="end" name="add-circle" color="primary" [routerLink]= "['/shopowner/shopservice']"></ion-icon>
+    </ion-item>
+  </div>
+  
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-list lines="none" class="ion-margin-vertical">
+    <!-- <ion-list-header mode="md">AVAILABLE</ion-list-header> -->
+    <ion-item *ngFor="let c of services;">
+      <ion-label>
+        <ion-text>{{c.servicename}}</ion-text>
+        <p class="tmargin">
+          <ion-text>
+            {{c.servicedescription}}
+          </ion-text>
+        </p>
+        <p class="tmargin">
+          ₹<ion-text>
+            {{c.servicecost}}
+          </ion-text>
+        </p>
+      </ion-label>
+      <ion-text 
+        slot="end" 
+        [color]= "'success'" [routerLink]=  "['/shopowner/serviceedit', c.collection_serviceId]">
+        <span>EDIT</span>
+      </ion-text>
+
+      <ion-text 
+      slot="end" 
+      [color]= "'danger'" (click)="delete(c.collection_serviceId)">
+      <span>DELETE</span>
+    </ion-text>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

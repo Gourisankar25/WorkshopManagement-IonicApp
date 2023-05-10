@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-list lines="none">
+    <ion-item color="primary">
+      <ion-label class="ion-text-center" color="white"></ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="popover">
+    <ion-item lines="none">
+      <ion-label>
+        <ion-text color="dark">AVAILABLE</ion-text>
+        <p><br><ion-text color="primary">MECHANIC</ion-text></p>
+      </ion-label>
+      <ion-icon slot="end" name="add-circle" color="primary" [routerLink]= "['/shopowner/mechreg']"></ion-icon>
+    </ion-item>
+  </div>
+  
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-list lines="none" class="ion-margin-vertical">
+    <!-- <ion-list-header mode="md">AVAILABLE</ion-list-header> -->
+    <ion-item *ngFor="let c of mechanic;">
+      <ion-label>
+        <ion-text>{{c.mechanicname}}</ion-text>
+        <p class="tmargin">
+          <ion-text>
+            {{c.status}}
+          </ion-text>
+        </p>
+      </ion-label>
+      <ion-text 
+        slot="end" 
+        [color]= "'success'" [routerLink]=  "['/shopowner/mechviewmore', c.collection_mechanicId]">
+        <span>VIEW MORE</span>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

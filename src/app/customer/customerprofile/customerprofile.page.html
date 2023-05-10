@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      <ion-title>My Profile </ion-title>
+
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content *ngFor="let p of profile;" color="success">
+  <img src="assets/icon/user2.png" class="center">
+  <ion-card>
+  <ion-list>
+    <ion-item>
+     <h3> <ion-icon name="person-circle-outline"></ion-icon></h3>
+      <p slot="end">{{p.customername}}</p>
+    </ion-item>
+    <ion-item>
+      <h3><ion-icon name="mail-outline"></ion-icon></h3>
+      <p slot="end">{{p.customeremail}}</p>
+    </ion-item>
+    <ion-item>
+      <h3> <ion-icon name="location-outline"></ion-icon></h3>
+      <p slot="end">{{p.location}}</p>
+    </ion-item>
+    <ion-item>
+      <h3><ion-icon name="call-outline"></ion-icon></h3>
+      <p slot="end">{{p.customernumber}}</p>
+    </ion-item>
+    <ion-item>
+      <h3><ion-label  slot="start"> Username</ion-label></h3>
+      <p slot="end">{{p.username}}</p>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-item>
+  
+    <ion-button fill="outline" class="btn btn-success" color="success" [routerLink]= "['/customer/customerprofileedit']" id="button">Edit</ion-button>
+  </ion-item>
+    <br><br>
+  </ion-card>
+</ion-content>

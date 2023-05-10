@@ -1,0 +1,58 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding" color="primary">
+ <div class="login-box">
+
+  <ion-card class="card" color="light">
+  <div class="popover">
+    <h4 style="font-size: 30px; text-align: center;color: #e5dda8;" >ADD SERVICE</h4>
+    <p style="color: #e5dda8;">Complete service details</p>
+  </div>
+  <form (ngSubmit)="register()" [formGroup]='signup'>
+
+ <ion-item> <ion-input placeholder="Service Name" class="primary-input" formControlName="servicename" [ngClass]="{ 'is-invalid':  submitted && f['servicename'].errors }"> &nbsp; <ion-icon name="construct-outline"></ion-icon> &nbsp;</ion-input>  <div *ngIf="submitted && f['servicename'].errors" class="invalid-feedback">
+  <div *ngIf="f['servicename'].errors['required']">
+    *Required
+  </div>
+
+ </div></ion-item> 
+ <ion-item><ion-input placeholder="Description" class="primary-input" formControlName="servicedescription" [ngClass]="{ 'is-invalid':  submitted && f['servicedescription'].errors }"> &nbsp;<ion-icon name="reader-outline"></ion-icon> &nbsp;</ion-input>  <div *ngIf="submitted && f['servicedescription'].errors" class="invalid-feedback">
+  <div *ngIf="f['servicedescription'].errors['required']">
+    *Description Required
+  </div>
+
+ </div></ion-item> 
+
+ <ion-item><ion-input placeholder="Service Cost " class="primary-input" formControlName="servicecost" [ngClass]="{ 'is-invalid':  submitted && f['servicecost'].errors }"> &nbsp;₹ &nbsp;</ion-input> <div *ngIf="submitted && f['servicecost'].errors" class="invalid-feedback">
+  <div *ngIf="f['servicecost'].errors['required']">
+    *Cost Required
+  </div>
+  <div *ngIf="f['servicecost'].errors['pattern']">
+    *Valid Cost
+ </div>
+
+ </div></ion-item>
+
+ <!-- &nbsp; <ion-input placeholder="Contact" class="primary-input" formControlName="mechanicnumber"> &nbsp;<ion-icon name="call-outline"></ion-icon></ion-input> -->
+
+<div>
+
+</div>
+<br>
+<br>
+<p style="color: #e5dda8; width: 90%;
+margin: auto;">By registering you're adding a new <b>service</b> to your shop</p>
+  <div class="ion-margin-top">
+    <ion-button type="submit" color="success">ADD SERVICE</ion-button>
+  </div>
+ 
+</form>
+<br>
+  <!-- <div class="ion-margin-top ion-text-center">
+    <a (click)="dismiss()">Close</a>
+  </div> -->
+</ion-card>
+ </div>
+</ion-content>

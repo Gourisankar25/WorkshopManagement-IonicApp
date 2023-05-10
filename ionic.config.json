@@ -1,0 +1,7 @@
+{
+  "name": "MechanicPortal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      </ion-buttons>
+    <ion-title></ion-title>
+    <ion-title>Shop Profile Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <br>
+  
+  <ion-card>
+    <ion-card-content>
+
+    
+  <form (ngSubmit)="update()" [formGroup]='profileedit'>
+    
+
+
+  <ion-item line="none">
+    <ion-icon name="storefront-outline"></ion-icon>
+    <!-- <ion-label position="floating">Workshop Name</ion-label> -->
+    <ion-input type="text" formControlName="workshopname" ></ion-input>
+  </ion-item>
+
+  <ion-item line="none" >
+    <ion-icon name="happy-outline"></ion-icon>
+    <!-- <ion-label position="floating">Owner Name</ion-label> -->
+    <ion-input type="text" formControlName="ownername" ></ion-input>
+  </ion-item>
+
+
+
+
+
+
+
+  <ion-list>
+    <ion-item line="none">
+      <ion-icon name="locate"></ion-icon> &nbsp;
+
+      <ion-select placeholder="Select district"  formControlName="districtname" (ionChange)="view()">
+<ion-select-option value="">-----select district-----</ion-select-option>
+        <ion-select-option *ngFor="let c of district;" value="{{c.districtname}}">{{c.districtname}}</ion-select-option>
+      
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item line="none">
+      <ion-icon name="locate"></ion-icon> &nbsp;
+
+      <ion-select placeholder="Select location"  formControlName="locationname">
+<ion-select-option  value="">-----select location-----</ion-select-option>
+
+        <ion-select-option *ngFor="let c of location;" value="{{c.locationname}}">{{c.locationname}}</ion-select-option>
+      </ion-select>
+
+    </ion-item>
+  </ion-list>
+<!-- <br>
+  Workshop Image  -->
+  <ion-item line="none" >
+  
+    <div *ngFor="let p of workshop;" style="height:30px">
+
+      <img [src] ="p.image" width="100px">
+    </div>
+<ion-input type="file" id="name" (change)="handlefile($event)"></ion-input>
+  </ion-item>
+
+  <ion-item line="none">
+    <ion-icon name="mail"></ion-icon>
+
+    <!-- <ion-label position="floating" >Email</ion-label> -->
+    <ion-input type="email" formControlName="email"></ion-input>
+  </ion-item>
+
+  <ion-item line="none">
+    <ion-icon name="call"></ion-icon>
+
+    <!-- <ion-label position="floating" >Phone Number</ion-label> -->
+    <ion-input type="number" formControlName="number"></ion-input>
+  </ion-item>
+
+  <ion-item line="none">
+    <ion-icon name="person-circle-outline"></ion-icon>
+
+    <!-- <ion-label position="floating">Username</ion-label> -->
+    <ion-input type="text" formControlName="username" ></ion-input>
+  </ion-item>
+
+  <ion-item line="none">
+    <ion-icon name="lock-closed-outline"></ion-icon>
+    <!-- <ion-label position="floating">Password</ion-label> -->
+    <ion-input type="text" formControlName="password"></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-item line="none">
+      <ion-icon name="eye-outline"></ion-icon>&nbsp;
+
+      <ion-select placeholder="Change Status"  formControlName="shopstatus" >
+        <ion-select-option value="Active" >Active</ion-select-option>
+        <ion-select-option value="Inactive">Inactive</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button type="submit" color="success" shape="round">UPDATE</ion-button>
+</form>
+</ion-card-content>
+</ion-card>
+
+</ion-content>

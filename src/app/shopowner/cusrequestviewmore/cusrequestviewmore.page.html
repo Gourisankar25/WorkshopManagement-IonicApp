@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-label style="font-weight: 800;font-size: 3em;">
+        View More
+        <p style="font-weight: 400;color: #433465 ;"></p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="primary">
+
+  <ion-card *ngFor="let c of request;" class="card">
+    <ion-card-header>
+      
+      <ion-card-subtitle>
+        <span id="temp">
+          {{c.servicename}}<br>
+       
+        </span><br>
+        <span id="temps">
+          <ion-icon name="person-outline"></ion-icon> {{c.customername}}<br><br>
+          &nbsp;₹&nbsp;&nbsp;&nbsp;{{c.servicecost}}<br><br>
+          <ion-icon name="location-outline"></ion-icon> {{c.landmark}}<br><br>
+           
+           <br>
+        </span>
+        <ion-card class="tt">
+          <img src="https://img.icons8.com/ultraviolet/40/null/tow-truck.png"/>&nbsp;&nbsp; - &nbsp;{{c.pickup}}<br>
+
+        </ion-card>
+<ion-card>
+  <ion-icon name="checkmark-done-outline"></ion-icon>&nbsp;{{c.description}}
+
+</ion-card>
+<ion-card>
+  <ion-icon name="calendar-outline"></ion-icon>&nbsp;<ion-label> {{c.requesteddate}}</ion-label>
+
+
+</ion-card>
+      </ion-card-subtitle>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <form [formGroup]="mechanicform"><br>
+        <!-- <ion-card-subtitle>Available Mehcnaics</ion-card-subtitle> -->
+        <ion-select placeholder="Select Available Mechanic" formControlName="mechanicname">
+          <ion-select-option *ngFor="let c of mechanics;" value="{{c.collection_mechanicId}}">{{c.mechanicname}}</ion-select-option>
+        </ion-select>
+      </form>
+    </ion-card-content>
+
+    <!-- <ion-row>
+    
+
+      <ion-item button (click)="update(item)">
+        <ion-icon name="create-outline"></ion-icon>
+        <p>Update</p>
+      </ion-item>
+
+      <ion-item button (click)="delete(item.key)">
+        <ion-icon name="trash-outline"></ion-icon>
+        <p>Cancel</p>
+      </ion-item>
+    </ion-row> -->
+
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="accept()" color="success">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="reject()" color="danger">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

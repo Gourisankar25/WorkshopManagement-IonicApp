@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+    <ion-menu-button></ion-menu-button> 
+  </ion-buttons>
+    <ion-item lines="none">
+      <ion-label style="font-weight: 500;font-size: 2.5em;">
+        My Requests
+        <!-- <p style="font-weight: 400;color: #433465 ;">{{today | date:'fullDate'}}</p> -->
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  color="primary">
+  <!-- <ion-button fill="solid" [routerLink]= "['/customer/acceptedrequests']" shape="round" color="success" size="medium">
+    Accepted Requests
+  </ion-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <ion-button fill="solid" [routerLink]= "['/customer/rejectedrequests']" shape="round" color="danger" size="medium">
+    Rejected Requests
+  </ion-button> -->
+
+  <ion-segment class="ion-padding">
+<ion-segment-button  [routerLink]= "['/customer/acceptedrequests']">
+  <ion-label color="success">ACCEPTED</ion-label>
+</ion-segment-button>
+<ion-segment-button [routerLink]= "['/customer/rejectedrequests']" >
+  <ion-label color="danger">REJECTED</ion-label>
+</ion-segment-button>
+
+  </ion-segment>
+
+
+
+
+  <ion-list-header class="md" color="dark"><p >PENDING REQUESTS BELOW &nbsp;<ion-icon name="caret-down-outline"></ion-icon></p></ion-list-header> 
+
+  <ion-card *ngFor="let c of request;" class="ion-margin">
+    <ion-card-header>
+      
+      <ion-card-subtitle><ion-icon name="build-outline"></ion-icon>
+        {{c.servicename}}<br><br>
+        <ion-label><ion-icon name="calendar-outline"></ion-icon>
+         </ion-label> {{c.requesteddate}}
+
+      </ion-card-subtitle>
+
+    </ion-card-header>
+
+    <ion-card-content>Description :-
+      <ion-label>{{c.description}}</ion-label>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

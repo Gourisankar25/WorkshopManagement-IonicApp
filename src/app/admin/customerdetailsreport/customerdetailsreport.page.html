@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+      <ion-title>CUSTOMER DETAILS</ion-title>
+    
+    </ion-buttons>
+    <ion-button fill="clear" [routerLink]= "['/admin/reports']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar> 
+</ion-header>
+
+
+<ion-content>
+  <br>
+
+  <ion-list lines="none">
+
+  <ion-item *ngFor="let c of profile;">
+
+    <ion-label>
+    
+      <!-- <ion-item>
+      <ion-thumbnail slot="start">
+        
+        <img [src]="c.image" height="100px"/>
+      </ion-thumbnail>
+        
+      </ion-item> -->
+      <ion-card>
+        <ion-card-header>
+          <p>
+            <ion-icon name="person-outline"></ion-icon>
+            {{c.customername}}
+         </p>
+
+         
+        </ion-card-header>
+
+        <ion-card-content>
+          <p>
+            <ion-icon name="call-outline"></ion-icon>
+             {{c.customernumber}}
+        </p>
+    
+        <p>
+            <ion-icon name="mail-outline"></ion-icon>
+             {{c.customeremail}}
+        </p>
+    
+        <p>
+            <ion-icon name="location-outline"></ion-icon>
+             {{c.location}}
+        </p>
+        </ion-card-content>
+
+
+       
+      </ion-card>
+    
+
+    
+
+   
+
+    <!-- <p>
+        <ion-icon name="call-outline"></ion-icon>
+        {{c.number}}
+    </p> -->
+
+    <br>
+
+  </ion-label>
+
+    </ion-item> 
+  </ion-list>
+</ion-content>

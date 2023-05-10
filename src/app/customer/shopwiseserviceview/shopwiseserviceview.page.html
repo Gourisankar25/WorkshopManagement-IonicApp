@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar color="success">
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-list lines="none">
+    <ion-item color="success">
+      <ion-label class="ion-text-center" color="white"></ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="popover">
+
+    <ion-item lines="none">
+      <ion-label>
+        <ion-text color="dark">AVAILABLE</ion-text>
+        <p><br><ion-text color="success">SERVICES</ion-text></p>
+      </ion-label>
+      <!-- <ion-icon slot="end" name="add-circle" color="primary" [routerLink]= "['/shopowner/mechreg']"></ion-icon> -->
+    </ion-item>
+  </div>
+  
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-list lines="none" class="ion-margin-vertical">
+    <!-- <ion-list-header mode="md">AVAILABLE</ion-list-header> -->
+    <ion-item *ngFor="let c of services;">
+      <ion-label>
+        <ion-text>{{c.servicename}}</ion-text>
+        <p class="tmargin">
+          <ion-text>
+            {{c.servicedescription}}
+          </ion-text><br>
+          <ion-text>
+            ₹ {{c.servicecost}}
+          </ion-text>
+        </p>
+      </ion-label>
+      <ion-text 
+        slot="end" 
+        [color]= "'success'" [routerLink]= "['/customer/serviceviewmore', c.collection_serviceId]">
+        <span>VIEW MORE</span>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+  <br>
+  <br>
+  <br>
+
+  
+
+
+
+
+<br>
+<br>
+
+&nbsp;<ion-label style="color: rgb(195, 218, 218);font-weight:400;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Give us a feedback about the services !</ion-label>
+  <br>
+  <br>
+
+  <form (ngSubmit)="register()" [formGroup]='signup'>
+
+  <div class="form-field">
+
+    <label [ngClass]="focused ? 'label-focused' : ''">{{label}}</label>
+    <input [type]="type" (focus)="focused = true" (blur)="onBlur($event)" formControlName="feedback"/>
+    
+  </div>
+  <ion-button expand='block' type="submit">
+    send feedback
+  </ion-button>
+
+</form>
+
+
+
+&nbsp;<ion-label style="color: rgb(195, 218, 218);font-weight:400;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Other feedbacks -</ion-label>
+<ion-item *ngFor="let c of feedback;">
+  <ion-label>
+    <ion-text>{{c.customername}}</ion-text>
+    <p class="tmargin">
+      <ion-text>
+        {{c.feedback}}
+      </ion-text><br>
+    </p>
+  </ion-label>
+</ion-item>
+
+</ion-content>

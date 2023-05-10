@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="white">
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button>  -->
+      <ion-avatar>
+        <img src="https://img.icons8.com/office/16/null/worldwide-location--v1.png"/>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title mode="md" class="ion-no-padding" >
+      <ion-label>
+        <ion-text color="white">You are here</ion-text>
+        <p>
+          Best App to Find Workshop
+        </p>
+        
+      </ion-label>
+    </ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button>
+        <ion-badge color="danger">&#9679;</ion-badge>
+        <ion-icon slot="icon-only" name="cart" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+
+  <ion-row>
+    <div class="image">
+      <img src="assets/icon/go mech.jpeg" class="center">
+      <ion-col size="6" class="ion-text-end">
+       &nbsp;<ion-button color="light" size="small" (click)="goadmin()">
+          <!-- <ion-text color="primary"></ion-text> -->
+          <ion-icon name="finger-print-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </div> 
+    <!-- <swiper [config]="bannerConfig" class="banners">
+      <ng-template swiperSlide *ngFor="let banner of banners">
+        <img [src]="banner?.banner" />
+      </ng-template>
+    </swiper> -->
+  </ion-row>
+<br>
+  <!-- <div class="topic">
+    <img src="https://img.icons8.com/external-flat-icon-mangsaabguru-/64/null/external-arrow-business-and-arrow-flat-flat-icon-mangsaabguru--21.png"/>
+    Who are you ? 
+  </div> -->
+
+  <ion-grid>
+    <ion-row>
+
+      <!-- <ion-col size="3">
+        <ion-card (click)="goadmin()">
+          <ion-thumbnail>
+            <img src="https://img.icons8.com/bubbles/50/null/admin-settings-male.png"/>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap ion-text-center">Admin</ion-label>
+        </ion-card>
+      </ion-col> &nbsp; -->
+
+      <ion-col size="3">
+        <ion-card (click)="goshop()">
+          <ion-thumbnail>
+            <!-- <img [src]="'assets/imgs/' + store?.icon" /> -->
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-workshop-diy-flaticons-lineal-color-flat-icons-3.png"/>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap ion-text-center">Workshop</ion-label>
+        </ion-card>
+      </ion-col>&nbsp;
+
+      <ion-col size="3">
+        <ion-card (click)="gocustomer()">
+          <ion-thumbnail>
+            <img src="https://img.icons8.com/arcade/64/null/gender-neutral-user--v2.png"/>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap ion-text-center">Customer</ion-label>
+        </ion-card>
+      </ion-col>
+
+      
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

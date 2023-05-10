@@ -1,0 +1,110 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <!-- <ion-item lines="none"> -->
+
+    <!-- <ion-menu-button></ion-menu-button>  -->
+
+    <ion-title class="ion-text-center">
+     WORKSHOP DASHBOARD
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  <!-- </ion-item> -->
+
+  </ion-toolbar>
+
+  <ion-grid ></ion-grid>
+  <ion-list class="popover" lines="none">
+    <ion-row>
+      
+      <ion-col size="6">
+        <ion-item color="danger">
+          <ion-label class="ion-text-wrap">
+            <h1>
+          <b>{{mechanic}}</b>
+              <!-- <ion-text class="ion-margin-start" color="primary">-12%</ion-text> -->
+            </h1>
+            <p>Total Mechanics</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-item color="danger">
+          <ion-label class="ion-text-wrap ion-text-right">
+            <h1>
+              <!-- <ion-text class="ion-margin-end" color="primary">+49%</ion-text> -->
+              <b>{{mechanicav}}</b>
+            </h1>
+            <p>Free Mechanics</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12"></ion-col>
+    </ion-row>
+  </ion-list>
+
+<div  *ngFor="let p of profile;" >
+
+  <ion-img [src]="p.image" class="center" ></ion-img>
+
+</div>
+
+
+<ion-content>
+
+
+
+<ion-grid class="sec">
+  <ion-row class="secs">
+
+    <ion-col size="3">
+      <ion-card (click)="goprofile()">
+        <ion-thumbnail>
+          <!-- <img [src]="'assets/imgs/package.png'" /> -->
+          <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-workshop-diy-flaticons-lineal-color-flat-icons-3.png"/>
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap ion-text-center">My Profile</ion-label>
+      </ion-card>
+    </ion-col> &nbsp;
+
+    <ion-col size="3">
+      <ion-card (click)="goservice()">
+        
+        <ion-thumbnail>
+          <!-- <img [src]="'assets/imgs/' + store?.icon" /> -->
+          <img src="https://img.icons8.com/3d-fluency/94/null/services--v2.png"/>
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap ion-text-center">Services</ion-label>
+      </ion-card>
+    </ion-col>&nbsp;
+
+    <ion-col size="3">
+      <ion-card (click)="gomech()">
+        <ion-thumbnail>
+          <img src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/null/external-mechanic-life-style-avatar-itim2101-lineal-color-itim2101.png"/>
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap ion-text-center">Mechanics</ion-label>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="3">
+      <ion-card (click)="gocustomer()">
+        <ion-thumbnail>
+          <img src="https://img.icons8.com/nolan/64/request-service.png"/>
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap ion-text-center">Requests</ion-label>
+      </ion-card>
+    </ion-col>
+
+    
+
+  </ion-row>
+</ion-grid>
+</ion-content> 

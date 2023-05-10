@@ -1,0 +1,38 @@
+ion-content{
+    font-family: sans-serif;
+    font-weight: 200;
+    --ion-background-color: linear-gradient(#171738,#2E1760);
+}
+
+.login-box {
+
+    position: absolute;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+     top: 25%;
+    
+      left: 5%;
+    
+    //  width: 10px;
+     padding: 40px;
+    
+    transform: translate (-50%, -50%); background: linear-gradient(#006992, #2E1760);
+    
+    box-sizing: border-box;
+    
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    
+    border-radius: 10px;
+    
+    }
+    
+    .login-box h2 { margin: 0 0 30px; padding: 0;
+    
+    color: #fff;
+    
+    text-align: center;
+    
+    }
+
+    

@@ -1,0 +1,42 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding" color="primary">
+ <div class="login-box">
+
+  <ion-card class="card" color="light">
+  <div class="popover">
+    <h4 style="font-size: 30px; text-align: center;color: #e5dda8;" >ADD LOCATION</h4>
+    <p style="color: #e5dda8;"></p>
+  </div>
+  <form (ngSubmit)="register()" [formGroup]='signup'>
+    <ion-list>
+      <ion-item >
+        <ion-select placeholder="Select district" formControlName="districtname">
+          <ion-select-option *ngFor="let c of district;" value="{{c.districtname}}">{{c.districtname}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+ &nbsp;   <ion-input placeholder="Location Name" class="primary-input" formControlName="locationname"> &nbsp; <ion-icon name="location-outline"></ion-icon></ion-input>
+
+
+<div>
+
+</div>
+<br>
+<br>
+<p style="color: #e5dda8; width: 90%;
+margin: auto;"> you're adding a new location under respective district</p>
+  <div class="ion-margin-top">
+    <ion-button type="submit" color="success">ADD</ion-button>
+  </div>
+ 
+</form>
+<br>
+  <!-- <div class="ion-margin-top ion-text-center">
+    <a (click)="dismiss()">Close</a>
+  </div> -->
+</ion-card>
+ </div>
+</ion-content>
